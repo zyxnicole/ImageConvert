@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.Group?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.SplitPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<SplitPane fx:id="splitPane" dividerPositions="0.3377926421404682" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="400.0" prefWidth="500.0" xmlns="http://javafx.com/javafx/11.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="nicole.Controller">
+  <items>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="195.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#fff0b9" height="400.0" layoutX="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="170.0" />
+            <Group fx:id="openfileButton" layoutX="32.0" layoutY="207.0" onMouseClicked="#openFileAction">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutY="7.0" mnemonicParsing="false" onMouseClicked="#openFileAction" opacity="0.95" prefHeight="35.0" prefWidth="98.0" text="          Open">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="30.0" fitWidth="30.0" layoutX="9.0" layoutY="9.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pictures/openfile.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Group>
+            <Group fx:id="saveButton" layoutX="33.0" layoutY="337.0" onMouseClicked="#downloadAction">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" layoutY="1.0" mnemonicParsing="false" onMouseClicked="#downloadAction" opacity="0.95" prefHeight="35.0" prefWidth="98.0" text="         Save">
+                     <font>
+                        <Font size="15.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="28.0" fitWidth="28.0" layoutX="8.0" layoutY="5.0" opacity="0.8" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pictures/download.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Group>
+            <ImageView fitHeight="100.0" fitWidth="177.0" layoutX="-4.0" opacity="0.89" pickOnBounds="true" preserveRatio="true">
+               <cursor>
+                  <Cursor fx:constant="DEFAULT" />
+               </cursor>
+               <image>
+                  <Image url="@pictures/catcat.jpeg" />
+               </image>
+            </ImageView>
+            <ComboBox fx:id="formatChoice" layoutX="33.0" layoutY="274.0" onAction="#chooseImageFormat" prefHeight="35.0" prefWidth="98.0" promptText="Choose Format" visible="false" visibleRowCount="8" AnchorPane.leftAnchor="33.0" />
+            <Label fx:id="chooseFormatLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="118.0" prefHeight="35.0" prefWidth="164.0" text="Choose Format !" textAlignment="CENTER" textFill="#006fb9" visible="false">
+               <font>
+                  <Font size="23.0" />
+               </font>
+            </Label>
+            <Label fx:id="savedLabel" alignment="CENTER" contentDisplay="CENTER" layoutY="118.0" prefHeight="35.0" prefWidth="164.0" text="Image Saved!" textAlignment="CENTER" textFill="#006fb9" visible="false">
+               <font>
+                  <Font size="24.0" />
+               </font>
+            </Label>
+         </children></AnchorPane>
+    <AnchorPane minHeight="0.0" minWidth="0.0" prefHeight="398.0" prefWidth="353.0">
+         <children>
+            <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#dae6f2" height="400.0" layoutX="-14.0" layoutY="-1.0" stroke="TRANSPARENT" strokeType="INSIDE" width="352.0" />
+            <ListView fx:id="listView" layoutY="177.0" opacity="0.31" prefHeight="222.0" prefWidth="326.0" visible="false" />
+            <ImageView fx:id="imageView" fitHeight="100.0" fitWidth="100.0" layoutX="113.0" layoutY="32.0" nodeOrientation="INHERIT" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="266.0" AnchorPane.leftAnchor="113.0" AnchorPane.rightAnchor="113.0" AnchorPane.topAnchor="32.0" />
+            <Group fx:id="rotateButton" layoutX="245.0" layoutY="32.0" onMouseClicked="#rotateAction" visible="false" AnchorPane.rightAnchor="41.0" AnchorPane.topAnchor="32.0">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#rotateAction" opacity="0.55" prefHeight="25.0" prefWidth="40.0" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <ImageView fx:id="rotateImage" fitHeight="20.0" fitWidth="23.0" layoutX="10.0" layoutY="4.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pictures/left90Icon.png" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Group>
+            <Group fx:id="filterButton" layoutX="245.0" layoutY="103.0" onMouseClicked="#filterAction" visible="false">
+               <children>
+                  <Button alignment="CENTER" contentDisplay="CENTER" mnemonicParsing="false" onMouseClicked="#filterAction" opacity="0.55" prefHeight="25.0" prefWidth="40.0" textAlignment="CENTER">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Button>
+                  <ImageView fitHeight="30.0" fitWidth="33.0" layoutX="5.0" layoutY="-1.0" opacity="0.85" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@pictures/filter.jpg" />
+                     </image>
+                  </ImageView>
+               </children>
+            </Group>
+         </children>
+      </AnchorPane>
+  </items>
+</SplitPane>
